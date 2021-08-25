@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		A97E377F26D378E000CB833C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E377E26D378E000CB833C /* AppDelegate.swift */; };
 		A97E378126D378E000CB833C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E378026D378E000CB833C /* SceneDelegate.swift */; };
-		A97E378326D378E000CB833C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E378226D378E000CB833C /* ViewController.swift */; };
-		A97E378626D378E000CB833C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A97E378426D378E000CB833C /* Main.storyboard */; };
+		A97E378326D378E000CB833C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E378226D378E000CB833C /* SignUpViewController.swift */; };
 		A97E378826D378E100CB833C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A97E378726D378E100CB833C /* Assets.xcassets */; };
 		A97E378B26D378E100CB833C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A97E378926D378E100CB833C /* LaunchScreen.storyboard */; };
+		A97E379A26D49C6400CB833C /* Segoe UI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A97E379926D49C6400CB833C /* Segoe UI.ttf */; };
+		A97E37A126D4A87600CB833C /* phone image.png in Resources */ = {isa = PBXBuildFile; fileRef = A97E379E26D4A87600CB833C /* phone image.png */; };
+		A97E37A226D4A87600CB833C /* mail image.png in Resources */ = {isa = PBXBuildFile; fileRef = A97E379F26D4A87600CB833C /* mail image.png */; };
+		A97E37A326D4A87600CB833C /* main image.png in Resources */ = {isa = PBXBuildFile; fileRef = A97E37A026D4A87600CB833C /* main image.png */; };
+		A97E37A526D4BA7200CB833C /* Segoe UI Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A97E37A426D4BA7200CB833C /* Segoe UI Bold.ttf */; };
+		A97E37A726D643AE00CB833C /* Alert Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E37A626D643AE00CB833C /* Alert Controller.swift */; };
+		A97E37A926D64B0D00CB833C /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E37A826D64B0D00CB833C /* Variable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A97E377B26D378E000CB833C /* Autorisacion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autorisacion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97E377E26D378E000CB833C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A97E378026D378E000CB833C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A97E378226D378E000CB833C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A97E378526D378E000CB833C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A97E378226D378E000CB833C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A97E378726D378E100CB833C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A97E378A26D378E100CB833C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A97E378C26D378E100CB833C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A97E379926D49C6400CB833C /* Segoe UI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Segoe UI.ttf"; sourceTree = "<group>"; };
+		A97E379E26D4A87600CB833C /* phone image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone image.png"; sourceTree = "<group>"; };
+		A97E379F26D4A87600CB833C /* mail image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail image.png"; sourceTree = "<group>"; };
+		A97E37A026D4A87600CB833C /* main image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main image.png"; sourceTree = "<group>"; };
+		A97E37A426D4BA7200CB833C /* Segoe UI Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Segoe UI Bold.ttf"; sourceTree = "<group>"; };
+		A97E37A626D643AE00CB833C /* Alert Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert Controller.swift"; sourceTree = "<group>"; };
+		A97E37A826D64B0D00CB833C /* Variable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,69 @@
 		A97E377D26D378E000CB833C /* Autorisacion */ = {
 			isa = PBXGroup;
 			children = (
-				A97E377E26D378E000CB833C /* AppDelegate.swift */,
-				A97E378026D378E000CB833C /* SceneDelegate.swift */,
-				A97E378226D378E000CB833C /* ViewController.swift */,
-				A97E378426D378E000CB833C /* Main.storyboard */,
-				A97E378726D378E100CB833C /* Assets.xcassets */,
-				A97E378926D378E100CB833C /* LaunchScreen.storyboard */,
-				A97E378C26D378E100CB833C /* Info.plist */,
+				A97E379526D3D62000CB833C /* Controller */,
+				A97E379226D3D5E100CB833C /* Model */,
+				A97E379326D3D5E900CB833C /* View */,
+				A97E379426D3D5F900CB833C /* Support Files */,
 			);
 			path = Autorisacion;
+			sourceTree = "<group>";
+		};
+		A97E379226D3D5E100CB833C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A97E37A826D64B0D00CB833C /* Variable.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A97E379326D3D5E900CB833C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A97E378926D378E100CB833C /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A97E379426D3D5F900CB833C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A97E379D26D4A7F000CB833C /* IMG */,
+				A97E379626D4975600CB833C /* Fonts */,
+				A97E377E26D378E000CB833C /* AppDelegate.swift */,
+				A97E378026D378E000CB833C /* SceneDelegate.swift */,
+				A97E378726D378E100CB833C /* Assets.xcassets */,
+				A97E378C26D378E100CB833C /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		A97E379526D3D62000CB833C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A97E378226D378E000CB833C /* SignUpViewController.swift */,
+				A97E37A626D643AE00CB833C /* Alert Controller.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A97E379626D4975600CB833C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A97E379926D49C6400CB833C /* Segoe UI.ttf */,
+				A97E37A426D4BA7200CB833C /* Segoe UI Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A97E379D26D4A7F000CB833C /* IMG */ = {
+			isa = PBXGroup;
+			children = (
+				A97E379F26D4A87600CB833C /* mail image.png */,
+				A97E37A026D4A87600CB833C /* main image.png */,
+				A97E379E26D4A87600CB833C /* phone image.png */,
+			);
+			path = IMG;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +191,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A97E378B26D378E100CB833C /* LaunchScreen.storyboard in Resources */,
+				A97E37A326D4A87600CB833C /* main image.png in Resources */,
+				A97E379A26D49C6400CB833C /* Segoe UI.ttf in Resources */,
 				A97E378826D378E100CB833C /* Assets.xcassets in Resources */,
-				A97E378626D378E000CB833C /* Main.storyboard in Resources */,
+				A97E37A526D4BA7200CB833C /* Segoe UI Bold.ttf in Resources */,
+				A97E37A226D4A87600CB833C /* mail image.png in Resources */,
+				A97E37A126D4A87600CB833C /* phone image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +207,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A97E378326D378E000CB833C /* ViewController.swift in Sources */,
+				A97E378326D378E000CB833C /* SignUpViewController.swift in Sources */,
+				A97E37A726D643AE00CB833C /* Alert Controller.swift in Sources */,
 				A97E377F26D378E000CB833C /* AppDelegate.swift in Sources */,
 				A97E378126D378E000CB833C /* SceneDelegate.swift in Sources */,
+				A97E37A926D64B0D00CB833C /* Variable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A97E378426D378E000CB833C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A97E378526D378E000CB833C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A97E378926D378E100CB833C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,7 +352,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR8VMB4WD9;
-				INFOPLIST_FILE = Autorisacion/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Autorisacion/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +371,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR8VMB4WD9;
-				INFOPLIST_FILE = Autorisacion/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Autorisacion/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
