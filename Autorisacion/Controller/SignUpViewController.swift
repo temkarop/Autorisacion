@@ -11,23 +11,9 @@ class SignUpViewController: UIViewController {
 
     private var user: Variable!
     
-    private let titleSignUp = UILabel()
-    private let subTitle = UILabel()
-    private let mailTitle = UILabel()
-    private let passwordTitle = UILabel()
-    private let phoneTitle = UILabel()
-    private let endTitle = UILabel()
-    
-    private let imageMain = UIImage(named: "main image")
-    private let imageMail = UIImage(named: "mail image")
-    private let imagePhone = UIImage(named: "phone image")
-    
     private let mailTextField = UITextField()
     private let passwordTextField = UITextField()
     private let phoneTextField = UITextField()
-    
-    private let signUpButton = UIButton()
-    private let signUpLabelButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,62 +27,74 @@ class SignUpViewController: UIViewController {
     
     private func updateUI() {
         
-        
+        let titleSignUp = UILabel(frame: CGRect(x: 0, y: 70, width: 110, height: 40))
+        titleSignUp.center.x = self.view.center.x
         titleSignUp.text = "Sign Up"
         titleSignUp.font = UIFont(name: "Segoe UI", size: 30.0)
         titleSignUp.textColor = #colorLiteral(red: 0.2549019608, green: 0.3529411765, blue: 0.3764705882, alpha: 1)
         self.view.addSubview(titleSignUp)
         
-        
+        let subTitle = UILabel(frame: CGRect(x: 0, y: 120, width: 311, height: 28))
+        subTitle.center.x = self.view.center.x
+        subTitle.textAlignment = .center
         subTitle.text = "Fill the details & create your accoint"
         subTitle.font = UIFont(name: "Segoe UI", size: 16.0)
         subTitle.textColor = #colorLiteral(red: 0.2549019608, green: 0.3529411765, blue: 0.3764705882, alpha: 1)
         self.view.addSubview(subTitle)
-        
-        
+
+        let mailTitle = UILabel(frame: CGRect(x: 55, y: 447, width: 65, height: 16))
         mailTitle.text = "Mail"
         mailTitle.font = UIFont(name: "Segoe UI", size: 12.0)
         mailTitle.textColor = #colorLiteral(red: 0.6470588235, green: 0.6588235294, blue: 0.6588235294, alpha: 1)
         self.view.addSubview(mailTitle)
         
-        
+        let passwordTitle = UILabel(frame: CGRect(x: 55, y: 507, width: 65, height: 16))
         passwordTitle.text = "Password"
         passwordTitle.font = UIFont(name: "Segoe UI", size: 12.0)
         passwordTitle.textColor = #colorLiteral(red: 0.6470588235, green: 0.6588235294, blue: 0.6588235294, alpha: 1)
         self.view.addSubview(passwordTitle)
-        
-        
+
+        let phoneTitle = UILabel(frame: CGRect(x: 55, y: 567, width: 65, height: 16))
         phoneTitle.text = "Your phone"
         phoneTitle.font = UIFont(name: "Segoe UI", size: 12.0)
         phoneTitle.textColor = #colorLiteral(red: 0.6470588235, green: 0.6588235294, blue: 0.6588235294, alpha: 1)
         self.view.addSubview(phoneTitle)
-        
-        
+
+        let endTitle = UILabel(frame: CGRect(x: 74, y: 741, width: 166, height: 21))
         endTitle.text = "Don't have an account?"
         endTitle.font = UIFont(name: "Segoe UI", size: 16.0)
         endTitle.textColor = #colorLiteral(red: 0.6470588235, green: 0.6588235294, blue: 0.6588235294, alpha: 1)
         self.view.addSubview(endTitle)
-        
-        
+
+        let imageMain = UIImage(named: "main image")
         let mainImage = UIImageView(image: imageMain)
+        mainImage.frame = CGRect(x: 39, y: 171, width: 270, height: 248)
         view.addSubview(mainImage)
         
+        let imageMail = UIImage(named: "mail image")
         let mailImage = UIImageView(image: imageMail)
+        mailImage.frame = CGRect(x: 19, y: 455, width: 21, height: 21)
         view.addSubview(mailImage)
-        
-        let passwordImage = UIImageView(image: imageMail)
+
+        let imagePassword = UIImage(named: "mail image")
+        let passwordImage = UIImageView(image: imagePassword)
+        passwordImage.frame = CGRect(x: 19, y: 515, width: 21, height: 21)
         view.addSubview(passwordImage)
-        
+
+        let imagePhone = UIImage(named: "phone image")
         let phoneImage = UIImageView(image: imagePhone)
+        phoneImage.frame = CGRect(x: 22, y: 576, width: 15, height: 24)
         view.addSubview(phoneImage)
-        
+
+        mailTextField.frame = CGRect(x: 55, y: 447, width: 305, height: 44)
         mailTextField.delegate = self
         mailTextField.text = "Write your email"
         mailTextField.textColor = #colorLiteral(red: 0.2509803922, green: 0.3098039216, blue: 0.4274509804, alpha: 1)
         mailTextField.font = UIFont(name: "Segoe UI Bold", size: 16.0)
         addDoneButtonTo(mailTextField)
         view.addSubview(mailTextField)
-        
+
+        passwordTextField.frame = CGRect(x: 55, y: 507, width: 305, height: 44)
         passwordTextField.delegate = self
         passwordTextField.text = "Write your password"
         passwordTextField.textColor = #colorLiteral(red: 0.2509803922, green: 0.3098039216, blue: 0.4274509804, alpha: 1)
@@ -104,179 +102,28 @@ class SignUpViewController: UIViewController {
         passwordTextField.isSecureTextEntry = true
         addDoneButtonTo(passwordTextField)
         view.addSubview(passwordTextField)
-        
+
+        phoneTextField.frame = CGRect(x: 55, y: 567, width: 305, height: 44)
         phoneTextField.delegate = self
         phoneTextField.text = "Write your phone"
         phoneTextField.textColor = #colorLiteral(red: 0.2509803922, green: 0.3098039216, blue: 0.4274509804, alpha: 1)
         phoneTextField.font = UIFont(name: "Segoe UI Bold", size: 16.0)
         addDoneButtonTo(phoneTextField)
         view.addSubview(phoneTextField)
-        
-        
+
+        let signUpButton = UIButton(frame: CGRect(x: 0, y: 662, width: 259, height: 50))
         signUpButton.backgroundColor = #colorLiteral(red: 1, green: 0.2431372549, blue: 0.1843137255, alpha: 1)
+        signUpButton.center.x = self.view.center.x
         signUpButton.layer.cornerRadius = 10
         signUpButton.setTitle("Sign up", for: .normal)
         signUpButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         view.addSubview(signUpButton)
-        
-        
+
+        let signUpLabelButton = UIButton(frame: CGRect(x: 245, y: 741, width: 65, height: 21))
         signUpLabelButton.setTitle("Sign up", for: .normal)
         signUpLabelButton.setTitleColor(#colorLiteral(red: 0.1764705882, green: 0.2980392157, blue: 0.662745098, alpha: 1), for: .normal)
         signUpLabelButton.addTarget(self, action: #selector(buttonActionTwo), for: .touchUpInside)
         view.addSubview(signUpLabelButton)
-        
-        
-        titleSignUp.translatesAutoresizingMaskIntoConstraints = false
-    
-        let titleSignUpTopConstraint = NSLayoutConstraint(item: titleSignUp, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.lessThanOrEqual, toItem: view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 40)
-        self.view.addConstraint(titleSignUpTopConstraint)
-        
-        let titleSignUpCenterConstraint = NSLayoutConstraint(item: titleSignUp, attribute: NSLayoutConstraint.Attribute.centerXWithinMargins, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerXWithinMargins, multiplier: 1.0, constant: 0)
-        self.view.addConstraint(titleSignUpCenterConstraint)
-        
-        
-        
-        subTitle.translatesAutoresizingMaskIntoConstraints = false
-        
-        let subTitleTopConstraint = NSLayoutConstraint(item: subTitle, attribute: NSLayoutConstraint.Attribute.lastBaseline, relatedBy: NSLayoutConstraint.Relation.equal, toItem: titleSignUp, attribute: NSLayoutConstraint.Attribute.lastBaseline, multiplier: 1.0, constant: 25)
-        self.view.addConstraint(subTitleTopConstraint)
-        
-        let subTitleCenterConstraint = NSLayoutConstraint(item: subTitle, attribute: NSLayoutConstraint.Attribute.centerXWithinMargins, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerXWithinMargins, multiplier: 1.0, constant: 0)
-        self.view.addConstraint(subTitleCenterConstraint)
-        
-        
-        mailTitle.translatesAutoresizingMaskIntoConstraints = false
-        
-        let mailTitleTopConstraint = NSLayoutConstraint(item: mailTitle, attribute: NSLayoutConstraint.Attribute.lastBaseline, relatedBy: NSLayoutConstraint.Relation.equal, toItem: mainImage, attribute: NSLayoutConstraint.Attribute.lastBaseline, multiplier: 1.0, constant: 25)
-        self.view.addConstraint(mailTitleTopConstraint)
-        
-        let mailTitleLeftConstraint = NSLayoutConstraint(item: mailTitle, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: mailImage, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 40)
-        self.view.addConstraint(mailTitleLeftConstraint)
-        
-        
-        
-        passwordTitle.translatesAutoresizingMaskIntoConstraints = false
-        
-        let passwordTitleTopConstraint = NSLayoutConstraint(item: passwordTitle, attribute: NSLayoutConstraint.Attribute.lastBaseline, relatedBy: NSLayoutConstraint.Relation.equal, toItem: mailTextField, attribute: NSLayoutConstraint.Attribute.lastBaseline, multiplier: 1.0, constant: 16)
-        self.view.addConstraint(passwordTitleTopConstraint)
-        
-        let passwordTitleLeftConstraint = NSLayoutConstraint(item: passwordTitle, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: passwordImage, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 40)
-        self.view.addConstraint(passwordTitleLeftConstraint)
-        
-        
-        phoneTitle.translatesAutoresizingMaskIntoConstraints = false
-        
-        let phoneTitleTopConstraint = NSLayoutConstraint(item: phoneTitle, attribute: NSLayoutConstraint.Attribute.lastBaseline, relatedBy: NSLayoutConstraint.Relation.equal, toItem: passwordTextField, attribute: NSLayoutConstraint.Attribute.lastBaseline, multiplier: 1.0, constant: 16)
-        self.view.addConstraint(phoneTitleTopConstraint)
-        
-        let phoneTitleLeftConstraint = NSLayoutConstraint(item: phoneTitle, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: phoneImage, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 40)
-        self.view.addConstraint(phoneTitleLeftConstraint)
-        
-        
-        endTitle.translatesAutoresizingMaskIntoConstraints = false
-    
-        let endTitleTopConstraint = NSLayoutConstraint(item: endTitle, attribute: NSLayoutConstraint.Attribute.lastBaseline, relatedBy: NSLayoutConstraint.Relation.equal, toItem: signUpButton, attribute: NSLayoutConstraint.Attribute.lastBaseline, multiplier: 1.0, constant: 50)
-        self.view.addConstraint(endTitleTopConstraint)
-        
-        let endTitleCenterConstraint = NSLayoutConstraint(item: endTitle, attribute: NSLayoutConstraint.Attribute.centerXWithinMargins, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerXWithinMargins, multiplier: 1.0, constant: -30)
-        self.view.addConstraint(endTitleCenterConstraint)
-        
-        
-        mainImage.translatesAutoresizingMaskIntoConstraints = false
-        
-        let mainImageTopConstraint = NSLayoutConstraint(item: mainImage, attribute: NSLayoutConstraint.Attribute.firstBaseline, relatedBy: NSLayoutConstraint.Relation.equal, toItem: subTitle, attribute: NSLayoutConstraint.Attribute.firstBaseline, multiplier: 1.0, constant: 25)
-        self.view.addConstraint(mainImageTopConstraint)
-        
-        let mainImageCenterConstraint = NSLayoutConstraint(item: mainImage, attribute: NSLayoutConstraint.Attribute.centerXWithinMargins, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerXWithinMargins, multiplier: 1.0, constant: 0)
-        self.view.addConstraint(mainImageCenterConstraint)
-        
-        
-        mailImage.translatesAutoresizingMaskIntoConstraints = false
-        
-        let mailImageTopConstraint = NSLayoutConstraint(item: mailImage, attribute: NSLayoutConstraint.Attribute.lastBaseline, relatedBy: NSLayoutConstraint.Relation.equal, toItem: mainImage, attribute: NSLayoutConstraint.Attribute.lastBaseline, multiplier: 1.0, constant: 40)
-        self.view.addConstraint(mailImageTopConstraint)
-        
-        let mailImageLeftConstraint = NSLayoutConstraint(item: mailImage, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 19)
-        self.view.addConstraint(mailImageLeftConstraint)
-        
-        
-        passwordImage.translatesAutoresizingMaskIntoConstraints = false
-        
-        let passwordImageTopConstraint = NSLayoutConstraint(item: passwordImage, attribute: NSLayoutConstraint.Attribute.lastBaseline, relatedBy: NSLayoutConstraint.Relation.equal, toItem: mailImage, attribute: NSLayoutConstraint.Attribute.lastBaseline, multiplier: 1.0, constant: 40)
-        self.view.addConstraint(passwordImageTopConstraint)
-        
-        let passwordImageLeftConstraint = NSLayoutConstraint(item: passwordImage, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 19)
-        self.view.addConstraint(passwordImageLeftConstraint)
-        
-        
-        phoneImage.translatesAutoresizingMaskIntoConstraints = false
-        
-        let phoneImageTopConstraint = NSLayoutConstraint(item: phoneImage, attribute: NSLayoutConstraint.Attribute.lastBaseline, relatedBy: NSLayoutConstraint.Relation.equal, toItem: passwordImage, attribute: NSLayoutConstraint.Attribute.lastBaseline, multiplier: 1.0, constant: 40)
-        self.view.addConstraint(phoneImageTopConstraint)
-        
-        let phoneImageLeftConstraint = NSLayoutConstraint(item: phoneImage, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 19)
-        self.view.addConstraint(phoneImageLeftConstraint)
-        
-        
-        mailTextField.translatesAutoresizingMaskIntoConstraints = false
-        
-        let mailTextFieldTopConstraint = NSLayoutConstraint(item: mailTextField, attribute: NSLayoutConstraint.Attribute.lastBaseline, relatedBy: NSLayoutConstraint.Relation.equal, toItem: mailTitle, attribute: NSLayoutConstraint.Attribute.lastBaseline, multiplier: 1.0, constant: 20)
-        self.view.addConstraint(mailTextFieldTopConstraint)
-        
-        let mailTextFieldLeftConstraint = NSLayoutConstraint(item: mailTextField, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: mailImage, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 40)
-        self.view.addConstraint(mailTextFieldLeftConstraint)
-        
-        let mailTextFieldRightConstraint = NSLayoutConstraint(item: mailTextField, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 20)
-        self.view.addConstraint(mailTextFieldRightConstraint)
-        
-        
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        
-        let passwprdTextFieldTopConstraint = NSLayoutConstraint(item: passwordTextField, attribute: NSLayoutConstraint.Attribute.lastBaseline, relatedBy: NSLayoutConstraint.Relation.equal, toItem: passwordTitle, attribute: NSLayoutConstraint.Attribute.lastBaseline, multiplier: 1.0, constant: 20)
-        self.view.addConstraint(passwprdTextFieldTopConstraint)
-        
-        let passwprdTextFieldLeftConstraint = NSLayoutConstraint(item: passwordTextField, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: passwordImage, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 40)
-        self.view.addConstraint(passwprdTextFieldLeftConstraint)
-        
-        let passwprdTextFieldRightConstraint = NSLayoutConstraint(item: passwordTextField, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 20)
-        self.view.addConstraint(passwprdTextFieldRightConstraint)
-        
-        
-        phoneTextField.translatesAutoresizingMaskIntoConstraints = false
-        
-        let phoneTextFieldTopConstraint = NSLayoutConstraint(item: phoneTextField, attribute: NSLayoutConstraint.Attribute.lastBaseline, relatedBy: NSLayoutConstraint.Relation.equal, toItem: phoneTitle, attribute: NSLayoutConstraint.Attribute.lastBaseline, multiplier: 1.0, constant: 20)
-        self.view.addConstraint(phoneTextFieldTopConstraint)
-        
-        let phoneTextFieldLeftConstraint = NSLayoutConstraint(item: phoneTextField, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: phoneImage, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 40)
-        self.view.addConstraint(phoneTextFieldLeftConstraint)
-        
-        let phoneTextFieldRightConstraint = NSLayoutConstraint(item: phoneTextField, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 20)
-        self.view.addConstraint(phoneTextFieldRightConstraint)
-        
-        
-        signUpButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        let signUpButtonTopConstraint = NSLayoutConstraint(item: signUpButton, attribute: NSLayoutConstraint.Attribute.lastBaseline, relatedBy: NSLayoutConstraint.Relation.lessThanOrEqual, toItem: phoneTextField, attribute: NSLayoutConstraint.Attribute.lastBaseline, multiplier: 1.0, constant: 51.5)
-        self.view.addConstraint(signUpButtonTopConstraint)
-        
-        let signUpButtonCenterConstraint = NSLayoutConstraint(item: signUpButton, attribute: NSLayoutConstraint.Attribute.centerXWithinMargins, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerXWithinMargins, multiplier: 1.0, constant: 0)
-        self.view.addConstraint(signUpButtonCenterConstraint)
-        
-        let signUpButtonHeightConstraint = NSLayoutConstraint(item: signUpButton, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1.0, constant: 50)
-        self.view.addConstraint(signUpButtonHeightConstraint)
-        
-        let signUpButtonWidthConstraint = NSLayoutConstraint(item: signUpButton, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1.0, constant: 259)
-        self.view.addConstraint(signUpButtonWidthConstraint)
-        
-        
-        signUpLabelButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        let signUpLabelButtonTopConstraint = NSLayoutConstraint(item: signUpLabelButton, attribute: NSLayoutConstraint.Attribute.lastBaseline, relatedBy: NSLayoutConstraint.Relation.greaterThanOrEqual, toItem: signUpButton, attribute: NSLayoutConstraint.Attribute.lastBaseline, multiplier: 1.0, constant: 50)
-        self.view.addConstraint(signUpLabelButtonTopConstraint)
-        
-        let signUpLabelButtonLeftConstraint = NSLayoutConstraint(item: signUpLabelButton, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: endTitle, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 65)
-        self.view.addConstraint(signUpLabelButtonLeftConstraint)
-        
     }
     
     @objc func buttonAction(sender: UIButton!) {
